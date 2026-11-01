@@ -1,0 +1,102 @@
+{
+  "name": "@wbc-ui/core",
+  "version": "3.0.0-rc.2",
+  "description": "Vue 3 rendering spine and core monorepo architecture for WBC-UI",
+  "license": "MIT",
+  "author": "Wissem Boughamoura",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbc-ui/core.git"
+  },
+  "homepage": "https://github.com/wbc-ui/core#readme",
+  "bugs": {
+    "url": "https://github.com/wbc-ui/core/issues"
+  },
+  "keywords": [
+    "vue3",
+    "wbc-ui",
+    "rendering-engine",
+    "component-library"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "src/styles/index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0",
+    "npm": ">=9"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "types/index.d.ts",
+    "src/styles",
+    "vite-plugin.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles": "./src/styles/index.js",
+    "./styles.css": "./dist/index.css",
+    "./vite-plugin": "./vite-plugin.mjs",
+    "./vite-plugin.mjs": "./vite-plugin.mjs"
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p types/__fixture__/tsconfig.json",
+    "test": "npm run typecheck && vitest run",
+    "coverage": "vitest run --coverage",
+    "release_gate": "node tools/release_gate.mjs",
+    "prepublishOnly": "node tools/check_dist_freshness.mjs"
+  },
+  "dependencies": {
+    "acorn": "^8.17.0",
+    "acorn-walk": "^8.3.5",
+    "crypto-js": "^4.2.0",
+    "dompurify": "^3.4.15",
+    "js-cookie": "^3.0.5",
+    "lz-string": "^1.5.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-code-copy": "^0.2.1",
+    "turndown": "^7.2.0",
+    "vue3-json-viewer": "^2.4.1"
+  },
+  "peerDependencies": {
+    "dayjs": "^1.11.0",
+    "prettier": "^3.0.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.3.0",
+    "vuetify": "^3.5.0"
+  },
+  "peerDependenciesMeta": {
+    "dayjs": {
+      "optional": true
+    },
+    "vuetify": {
+      "optional": true
+    },
+    "vue-router": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.2.7",
+    "prettier": "^3.0.0",
+    "typescript": "^5.7.0"
+  }
+}

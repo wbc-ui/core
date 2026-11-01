@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <!-- Material elevation-4 shadow filter -->
+    <filter id="elevation4" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.16"/>
+    </filter>
+    <!-- Monospace font stack -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap');
+      .mono { font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace; }
+      .sans { font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- TOP BAND — full width, 48px tall            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1280" height="48" fill="#0d0d14"/>
+  <!-- Monospace part -->
+  <text x="520" y="30" class="mono" font-size="16" fill="#8a8aa0" text-anchor="end">
+    &lt;WBC :item="…" /&gt;
+  </text>
+  <!-- Separator dot -->
+  <text x="540" y="30" class="sans" font-size="14" fill="#4a4a5e" text-anchor="middle">·</text>
+  <!-- Sans-serif part -->
+  <text x="560" y="30" class="sans" font-size="14" fill="#6c6c80" text-anchor="start">
+    one component, real DOM
+  </text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- LEFT PANE — dark code editor background     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="0" y="48" width="636" height="592" fill="#1e1e2e"/>
+
+  <!-- Subtle "WHAT YOU WRITE" label -->
+  <text x="40" y="88" class="sans" font-size="11" fill="#585870" font-weight="500" letter-spacing="1.5">
+    WHAT YOU WRITE
+  </text>
+
+  <!-- Code block — Scenario 4: JSON → VCard -->
+  <!-- Line 1: <WBC :item="{ -->
+  <text x="56" y="150" class="mono" font-size="16">
+    <tspan fill="#cba6f7">&lt;</tspan><tspan fill="#89b4fa">WBC</tspan>
+    <tspan fill="#a6e3a1"> :item</tspan><tspan fill="#cdd6f4">=</tspan><tspan fill="#f9e2af">"</tspan><tspan fill="#cdd6f4">{</tspan>
+  </text>
+
+  <!-- Line 2:   comp: 'VCard', -->
+  <text x="56" y="180" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">    comp</tspan><tspan fill="#89b4fa">:</tspan>
+    <tspan fill="#f9e2af"> 'VCard'</tspan><tspan fill="#cdd6f4">,</tspan>
+  </text>
+
+  <!-- Line 3:   options: { -->
+  <text x="56" y="210" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">    options</tspan><tspan fill="#89b4fa">:</tspan>
+    <tspan fill="#cdd6f4"> {</tspan>
+  </text>
+
+  <!-- Line 4:     props: { elevation: 4 }, -->
+  <text x="56" y="240" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">      props</tspan><tspan fill="#89b4fa">:</tspan>
+    <tspan fill="#cdd6f4"> { </tspan><tspan fill="#cdd6f4">elevation</tspan><tspan fill="#89b4fa">:</tspan>
+    <tspan fill="#fab387"> 4</tspan><tspan fill="#cdd6f4"> },</tspan>
+  </text>
+
+  <!-- Line 5:     html: '<h2>Q3 Revenue</h2> -->
+  <text x="56" y="270" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">      html</tspan><tspan fill="#89b4fa">:</tspan>
+    <tspan fill="#f9e2af"> '&lt;h2&gt;Q3 Revenue&lt;/h2&gt;</tspan>
+  </text>
+
+  <!-- Line 6:           <p>+24% YoY</p>', -->
+  <text x="56" y="300" class="mono" font-size="16">
+    <tspan fill="#f9e2af">            &lt;p&gt;+24% YoY&lt;/p&gt;'</tspan><tspan fill="#cdd6f4">,</tspan>
+  </text>
+
+  <!-- Line 7:     class: 'pa-4' -->
+  <text x="56" y="330" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">      class</tspan><tspan fill="#89b4fa">:</tspan>
+    <tspan fill="#f9e2af"> 'pa-4'</tspan>
+  </text>
+
+  <!-- Line 8:   } -->
+  <text x="56" y="360" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">    }</tspan>
+  </text>
+
+  <!-- Line 9: }" /> -->
+  <text x="56" y="390" class="mono" font-size="16">
+    <tspan fill="#cdd6f4">  }</tspan><tspan fill="#f9e2af">"</tspan>
+    <tspan fill="#cdd6f4"> </tspan><tspan fill="#cba6f7">/&gt;</tspan>
+  </text>
+
+  <!-- Line numbers (subtle) -->
+  <text x="40" y="150" class="mono" font-size="12" fill="#45475a" text-anchor="end">1</text>
+  <text x="40" y="180" class="mono" font-size="12" fill="#45475a" text-anchor="end">2</text>
+  <text x="40" y="210" class="mono" font-size="12" fill="#45475a" text-anchor="end">3</text>
+  <text x="40" y="240" class="mono" font-size="12" fill="#45475a" text-anchor="end">4</text>
+  <text x="40" y="270" class="mono" font-size="12" fill="#45475a" text-anchor="end">5</text>
+  <text x="40" y="300" class="mono" font-size="12" fill="#45475a" text-anchor="end">6</text>
+  <text x="40" y="330" class="mono" font-size="12" fill="#45475a" text-anchor="end">7</text>
+  <text x="40" y="360" class="mono" font-size="12" fill="#45475a" text-anchor="end">8</text>
+  <text x="40" y="390" class="mono" font-size="12" fill="#45475a" text-anchor="end">9</text>
+
+  <!-- Subtle filename tab -->
+  <rect x="56" y="105" width="130" height="26" rx="4" fill="#313244"/>
+  <text x="70" y="122" class="mono" font-size="11" fill="#89b4fa">App.vue</text>
+  <circle cx="172" cy="118" r="3" fill="#45475a"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CENTRE DIVIDER — line + arrow               -->
+  <!-- ═══════════════════════════════════════════ -->
+  <line x1="640" y1="48" x2="640" y2="640" stroke="#3b3b4f" stroke-width="1"/>
+
+  <!-- Arrow circle at vertical centre -->
+  <circle cx="640" cy="344" r="18" fill="#1976D2"/>
+  <text x="640" y="351" class="sans" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="600">→</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- RIGHT PANE — light Material surface          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="644" y="48" width="636" height="592" fill="#f5f5f5"/>
+
+  <!-- Subtle "WHAT GETS RENDERED" label -->
+  <text x="680" y="88" class="sans" font-size="11" fill="#9e9e9e" font-weight="500" letter-spacing="1.5">
+    WHAT GETS RENDERED
+  </text>
+
+  <!-- Material VCard — centred in right pane -->
+  <!-- Card background with elevation-4 shadow -->
+  <rect x="832" y="264" width="280" height="160" rx="8" fill="#ffffff" filter="url(#elevation4)"/>
+
+  <!-- Card inner padding area -->
+  <!-- Title: Q3 Revenue -->
+  <text x="856" y="308" class="sans" font-size="24" fill="#212121" font-weight="600">
+    Q3 Revenue
+  </text>
+
+  <!-- Divider line inside card -->
+  <line x1="856" y1="320" x2="1088" y2="320" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Body: +24% YoY with up arrow -->
+  <text x="856" y="368" class="sans" font-size="32" fill="#43A047" font-weight="600">
+    <tspan fill="#66BB6A" font-size="18">▲ </tspan>+24% YoY
+  </text>
+
+  <!-- Subtle "Vuetify Material" badge below the card -->
+  <rect x="906" y="440" width="130" height="24" rx="12" fill="#e8eaf6"/>
+  <text x="971" y="456" class="sans" font-size="10" fill="#5c6bc0" text-anchor="middle" font-weight="500">
+    Vuetify · Material UI
+  </text>
+
+  <!-- Browser chrome hint — dots in top-right corner -->
+  <circle cx="700" cy="118" r="5" fill="#e0e0e0"/>
+  <circle cx="716" cy="118" r="5" fill="#e0e0e0"/>
+  <circle cx="732" cy="118" r="5" fill="#e0e0e0"/>
+  <!-- URL bar hint -->
+  <rect x="750" y="112" width="180" height="12" rx="6" fill="#eeeeee"/>
+  <text x="840" y="122" class="mono" font-size="8" fill="#9e9e9e" text-anchor="middle">localhost:5173</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- OUTER BORDER (1px, spec §7 dark-mode safe)   -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="0" y="0" width="1280" height="640" rx="0" fill="none" stroke="#2a2a3c" stroke-width="1"/>
+</svg>

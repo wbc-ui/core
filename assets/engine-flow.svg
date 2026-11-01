@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 420" width="780" height="420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1976D2"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#43A047"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="#1976D2"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="#2E7D32"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="420" rx="10" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="390" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="16" fill="#1a202c">WBC Rendering Engine — Detection → Dispatch → Decorate → Output</text>
+
+  <!-- Stage labels -->
+  <text x="108" y="45" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">INPUT</text>
+  <text x="338" y="45" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">DISPATCH</text>
+  <text x="585" y="45" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">RENDER</text>
+  <text x="585" y="300" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">DECORATE</text>
+  <text x="585" y="398" text-anchor="middle" font-family="Arial" font-size="9" fill="#94A3B8" font-weight="700">OUTPUT</text>
+
+  <!-- ── Row 1: Input ── -->
+  <rect x="20" y="55" width="176" height="38" rx="6" fill="white" stroke="#1976D2" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="108" y="71" text-anchor="middle" font-family="monospace" font-weight="700" font-size="12" fill="#1565C0">Input: data</text>
+  <text x="108" y="85" text-anchor="middle" font-family="Arial" font-size="9" fill="#64748B">JSON · string · file</text>
+
+  <!-- Arrow input → detection (ends at detection edge) -->
+  <line x1="196" y1="74" x2="252" y2="74" stroke="#1976D2" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+
+  <!-- ── Row 2: Type Detection ── -->
+  <rect x="260" y="52" width="156" height="44" rx="6" fill="url(#blue)" filter="url(#shadow)"/>
+  <text x="338" y="70" text-anchor="middle" font-family="Arial" font-weight="700" font-size="12" fill="white">Type Detection</text>
+  <text x="338" y="88" text-anchor="middle" font-family="monospace" font-size="9" fill="#BBDEFB">string ? object ? array ? file ?</text>
+
+  <!-- Branch arrows detection → renderers (all end at renderer left edge x=500) -->
+  <line x1="416" y1="62" x2="492" y2="88" stroke="#43A047" stroke-width="1.5"/>
+  <line x1="416" y1="74" x2="492" y2="162" stroke="#1976D2" stroke-width="1.5"/>
+  <line x1="416" y1="86" x2="492" y2="236" stroke="#7B1FA2" stroke-width="1.5"/>
+
+  <!-- ── Renderers ── -->
+  <rect x="500" y="62" width="170" height="52" rx="5" fill="#E8F5E9" stroke="#43A047" stroke-width="1.2"/>
+  <text x="585" y="84" text-anchor="middle" font-family="monospace" font-weight="700" font-size="10" fill="#2E7D32">renderString</text>
+  <text x="585" y="102" text-anchor="middle" font-family="Arial" font-size="8" fill="#4CAF50">pipe | syntax</text>
+
+  <rect x="500" y="136" width="170" height="52" rx="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="1.2"/>
+  <text x="585" y="158" text-anchor="middle" font-family="monospace" font-weight="700" font-size="10" fill="#1565C0">renderObject</text>
+  <text x="585" y="176" text-anchor="middle" font-family="Arial" font-size="8" fill="#1976D2">{ comp, options, items }</text>
+
+  <rect x="500" y="210" width="170" height="52" rx="5" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="1.2"/>
+  <text x="585" y="232" text-anchor="middle" font-family="monospace" font-weight="700" font-size="10" fill="#6A1B9A">renderArray·File·Func·Prim</text>
+  <text x="585" y="250" text-anchor="middle" font-family="Arial" font-size="8" fill="#8E24AA">lists / images / code / values</text>
+
+  <!-- Arrow renderers merge → decorator (from LAST box bottom=262 to decorator top=302) -->
+  <line x1="585" y1="262" x2="585" y2="295" stroke="#64748B" stroke-width="1.5"/>
+  <polygon points="580,290 585,300 590,290" fill="#64748B"/>
+
+  <!-- ── Decorator Chain ── -->
+  <rect x="500" y="302" width="170" height="60" rx="5" fill="white" stroke="#7986CB" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="585" y="322" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#3949AB">Decorator Chain</text>
+  <text x="585" y="340" text-anchor="middle" font-family="monospace" font-size="8" fill="#7986CB">Focus → RTL → Select →</text>
+  <text x="585" y="354" text-anchor="middle" font-family="monospace" font-size="8" fill="#7986CB">wbCode → Flattener</text>
+
+  <!-- Arrow decorator → output (from decorator bottom=362 to output top=388) -->
+  <line x1="585" y1="362" x2="585" y2="378" stroke="#43A047" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ── Output ── -->
+  <rect x="530" y="388" width="110" height="30" rx="5" fill="url(#green)" filter="url(#shadow)"/>
+  <text x="585" y="407" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="white">VNodes → DOM</text>
+
+  <!-- Vertical flow guide lines -->
+  <line x1="338" y1="96" x2="338" y2="330" stroke="#64748B" stroke-width="0.8" stroke-dasharray="5,4" opacity="0.25"/>
+  <line x1="338" y1="330" x2="500" y2="330" stroke="#7986CB" stroke-width="0.8" stroke-dasharray="5,4" opacity="0.25"/>
+</svg>

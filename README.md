@@ -153,7 +153,7 @@ const pageDefinition = {
 ### npm
 
 ```bash
-npm install @wbc-ui/core@3.0.0-rc.1
+npm install @wbc-ui/core@3.0.0-rc.3
 
 # Peers — install only the ones you actually use
 npm install vue@^3.5.0
